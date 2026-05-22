@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>韩生元</title>
+<style>
+  :root {
+    --bg: #0b0e11;
+    --surface: #14181d;
+    --surface-hover: #1a1f25;
+    --border: #252a30;
+    --text: #c8cdd3;
+    --text-dim: #6b7178;
+    --accent: #bd9e60;
+    --accent-dim: #7d693f;
+    --gold: #c9a85b;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @font-face {
+    font-family: 'Geist';
+    src: local('Inter'), local('system-ui');
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, "Times New Roman", serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 80px 28px 120px;
+  }
+
+  /* ----- Hero ----- */
+  .hero {
+    padding: 60px 0 48px;
+  }
+
+  .name {
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #e8e4dd;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .name .dot {
+    color: var(--accent);
+  }
+
+  .tagline {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    font-family: "IBM Plex Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .tagline span {
+    color: var(--accent);
+  }
+
+  /* ----- Divider ----- */
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--accent-dim);
+    margin: 40px 0;
+  }
+
+  /* ----- Section ----- */
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-family: "IBM Plex Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-weight: 500;
+  }
+
+  .section p {
+    font-size: 1.02rem;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  /* ----- Cards ----- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .card:hover {
+    background: var(--surface-hover);
+    border-color: #333840;
+    transform: translateY(-1px);
+  }
+
+  .card-label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    font-family: "IBM Plex Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+    margin-bottom: 6px;
+  }
+
+  .card-value {
+    font-size: 1.05rem;
+    color: #e0dcd5;
+  }
+
+  /* ----- Timeline ----- */
+  .timeline-item {
+    position: relative;
+    padding-left: 24px;
+    padding-bottom: 28px;
+    border-left: 1px solid var(--border);
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .timeline-date {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    font-family: "IBM Plex Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+  }
+
+  .timeline-body {
+    font-size: 0.98rem;
+  }
+
+  .timeline-body strong {
+    color: #e8e4dd;
+    font-weight: 600;
+  }
+
+  /* ----- Links ----- */
+  .links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.92rem;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    padding-bottom: 2px;
+    font-family: "IBM Plex Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  .links a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent-dim);
+  }
+
+  /* ----- Footer ----- */
+  .footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer p {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    font-family: "IBM Plex Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  .footer .wisteria {
+    color: var(--accent);
+  }
+
+  @media (max-width: 540px) {
+    .container { padding: 40px 20px 80px; }
+    .name { font-size: 2.4rem; }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1 class="name">韩生元<span class="dot">.</span></h1>
+    <p class="tagline"><span>HIT</span> &nbsp;/&nbsp; 储能科学与工程 &nbsp;/&nbsp; 本科生</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- 卡片 -->
+  <div class="section">
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">学校</div>
+        <div class="card-value">哈尔滨工业大学</div>
+      </div>
+      <div class="card">
+        <div class="card-label">专业</div>
+        <div class="card-value">储能科学与工程</div>
+      </div>
+      <div class="card">
+        <div class="card-label">学位</div>
+        <div class="card-value">工学学士（在读）</div>
+      </div>
+      <div class="card">
+        <div class="card-label">所在地</div>
+        <div class="card-value">哈尔滨</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 简介 -->
+  <div class="section">
+    <h2 class="section-title">关于</h2>
+    <p>
+      哈尔滨工业大学储能科学与工程专业在读本科生。对新能源技术、大规模储能系统及能源转换机制有浓厚兴趣。
+      正在夯实工程热力学、电化学及材料科学基础，希望未来在储能领域做出扎实的工作。
+    </p>
+  </div>
+
+  <!-- 教育 -->
+  <div class="section">
+    <h2 class="section-title">教育经历</h2>
+    <div class="timeline-item">
+      <div class="timeline-date">2023 — 至今</div>
+      <div class="timeline-body">
+        <strong>哈尔滨工业大学</strong><br>
+        储能科学与工程 &nbsp;·&nbsp; 本科生
+      </div>
+    </div>
+  </div>
+
+  <!-- 技能 -->
+  <div class="section">
+    <h2 class="section-title">技能</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">工程基础</div>
+        <div class="card-value">热力学 · 传热学 · 电化学</div>
+      </div>
+      <div class="card">
+        <div class="card-label">软件工具</div>
+        <div class="card-value">MATLAB · AutoCAD · COMSOL</div>
+      </div>
+      <div class="card">
+        <div class="card-label">编程</div>
+        <div class="card-value">Python · C</div>
+      </div>
+      <div class="card">
+        <div class="card-label">语言</div>
+        <div class="card-value">中文 · 英语</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 链接 -->
+  <div class="section">
+    <h2 class="section-title">联系</h2>
+    <div class="links">
+      <a href="mailto:hanshengyuan@stu.hit.edu.cn">Email</a>
+      <a href="#" onclick="return false;">GitHub</a>
+      <a href="#" onclick="return false;">微信</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>韩生元 <span class="wisteria">·</span> 2025</p>
+  </div>
+
+</div>
+
+</body>
+</html>
