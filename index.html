@@ -210,20 +210,6 @@
     color: var(--accent);
   }
 
-  /* ----- Cigarette Box ----- */
-  .cig-box {
-    margin-top: 16px;
-    width: 180px;
-    height: auto;
-    opacity: 0.85;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-
-  .cig-box:hover {
-    opacity: 1;
-    transform: translateY(-4px);
-  }
-
   @media (max-width: 540px) {
     .container { padding: 40px 20px 80px; }
     .name { font-size: 2.4rem; }
@@ -316,72 +302,6 @@
       <a href="mailto:hanshengyuan@stu.hit.edu.cn">Email</a>
       <a href="#" onclick="return false;">GitHub</a>
       <a href="#" onclick="return false;">微信</a>
-    </div>
-  </div>
-
-  <!-- 泰山 -->
-  <div class="section" style="margin-top: 24px;">
-    <p style="font-size: 0.92rem; color: var(--text-dim);">
-      她爱抽<span style="color: var(--accent);">泰山</span>。
-    </p>
-    <div class="cig-box">
-      <svg viewBox="0 0 260 360" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#1a3a5c"/>
-            <stop offset="45%" stop-color="#1e4270"/>
-            <stop offset="100%" stop-color="#142d4a"/>
-          </linearGradient>
-          <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#d4d4d4"/>
-            <stop offset="50%" stop-color="#f0f0f0"/>
-            <stop offset="100%" stop-color="#b8b8b8"/>
-          </linearGradient>
-        </defs>
-
-        <!-- 盒体阴影 -->
-        <rect x="28" y="18" width="204" height="324" rx="12" fill="#0a1520" opacity="0.5"/>
-
-        <!-- 盒体主体 -->
-        <rect x="20" y="10" width="204" height="324" rx="12" fill="url(#boxGrad)"/>
-
-        <!-- 顶部翻盖线 -->
-        <line x1="20" y1="82" x2="224" y2="82" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
-
-        <!-- 顶部银色条 -->
-        <rect x="20" y="10" width="204" height="18" rx="12" fill="url(#silver)"/>
-        <rect x="20" y="16" width="204" height="12" fill="url(#silver)"/>
-
-        <!-- 山峰 - 泰山 -->
-        <path d="M70 200 L122 100 L130 120 L160 60 L168 85 L195 50 L200 140 L210 155 L215 200 Z"
-              fill="rgba(255,255,255,0.1)"/>
-        <!-- 第二层山 -->
-        <path d="M50 230 L90 170 L95 180 L135 120 L140 135 L180 100 L190 145 L200 155 L205 200 L215 210 L220 230 Z"
-              fill="rgba(255,255,255,0.05)"/>
-
-        <!-- 太阳 -->
-        <circle cx="165" cy="75" r="18" fill="#bd9e60" opacity="0.8"/>
-        <circle cx="165" cy="75" r="14" fill="#d4b96a" opacity="0.6"/>
-
-        <!-- 云 -->
-        <ellipse cx="130" cy="115" rx="22" ry="6" fill="rgba(255,255,255,0.12)"/>
-        <ellipse cx="140" cy="112" rx="16" ry="5" fill="rgba(255,255,255,0.1)"/>
-
-        <!-- 泰山 -->
-        <text x="122" y="260" text-anchor="middle" font-family="serif" font-size="28" font-weight="700"
-              fill="#e8dcc8" letter-spacing="8">泰山</text>
-
-        <!-- TAISHAN -->
-        <text x="122" y="290" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="400"
-              fill="rgba(255,255,255,0.5)" letter-spacing="5">TAISHAN</text>
-
-        <!-- 底部装饰线 -->
-        <line x1="60" y1="305" x2="184" y2="305" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
-
-        <!-- 底部文字 -->
-        <text x="122" y="324" text-anchor="middle" font-family="sans-serif" font-size="6"
-              fill="rgba(255,255,255,0.3)">山东中烟工业有限责任公司</text>
-      </svg>
     </div>
   </div>
 
